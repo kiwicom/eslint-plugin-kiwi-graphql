@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "6"
+  - "7"
+  - "node" # latest
+
+script:
+  - yarn install
+  - yarn run test -- --ci --color
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
